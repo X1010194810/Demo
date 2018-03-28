@@ -1,0 +1,23 @@
+<!-- 首页导航栏菜单 -->
+<template name="main_nav">
+  <view class="main_nav">
+    <view class="{{temp.currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">{{temp.MainNav[0]}}</view>
+    <view class="{{temp.currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">{{temp.MainNav[1]}}</view>
+    <view class="{{temp.currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">{{temp.MainNav[2]}}</view>
+  </view>
+</template>
+
+<!-- 列表 -->
+<template name="List">
+   <view wx:for="{{List}}" wx:key> 
+    <navigator url='{{item.url}}'>
+      <view wx:if="{{item.src}}" class='my_list'>   
+        <image src='{{item.src}}'></image>
+        <view>{{item.name}}</view>
+      </view>
+      <view wx:else class='my_list'>   
+        <view>{{item.name}}</view>
+      </view>
+    </navigator>
+   </view> 
+</template>
